@@ -16,8 +16,13 @@ const scores = [
 // 66
 // ==========================================
 
+console.log(`
+Opdracht 1a
+`);
 
-
+for (let i = 0; i < scores.length; i++) {
+    console.log(scores[i].score);
+}
 
 
 // ==========================================
@@ -32,9 +37,23 @@ const scores = [
 // D
 // ==========================================
 
+console.log(`
+Opdracht 1b
+`);
 
-
-
+for (let i = 0; i < scores.length; i++) {
+    if (scores[i].score < 60) {
+        console.log(`F`);
+    } else if (scores[i].score < 70) {
+        console.log(`D`);
+    } else if (scores[i].score < 80) {
+        console.log(`C`);
+    } else if (scores[i].score < 90) {
+        console.log(`B`);
+    } else {
+        console.log(`A`);
+    }
+}
 
 // ==========================================
 // Opdracht 1c
@@ -49,8 +68,29 @@ const scores = [
 //  ];
 // ==========================================
 
+console.log(`
+Opdracht 1c
+`);
 
+console.log(`Originele array`);
+console.log(scores);
 
+for (let i = 0; i < scores.length; i++) {
+    if (scores[i].score < 60) {
+        scores[i].grade = `F`;
+    } else if (scores[i].score < 70) {
+        scores[i].grade = `D`;
+    } else if (scores[i].score < 80) {
+        scores[i].grade = `C`;
+    } else if (scores[i].score < 90) {
+        scores[i].grade = `B`;
+    } else {
+        scores[i].grade = `A`;
+    }
+}
+
+console.log(`Aangepaste array`);
+console.log(scores);
 
 
 // ==========================================
@@ -75,16 +115,34 @@ const NOVIEmployees = [
 //  ];
 // ==========================================
 
+console.log(`
+Opdracht 2:
+`);
+console.log(`Originele array`);
+console.log(NOVIEmployees);
 
+for (let i = 0; i < NOVIEmployees.length; i++) {
+    const emailAddress = `${NOVIEmployees[i].firstName}.${NOVIEmployees[i].lastName}@novi.nl`;
+    NOVIEmployees[i].email = emailAddress;
+}
 
-
+console.log(`Aangepaste array`);
+console.log(NOVIEmployees);
 
 
 // Opdracht 2-BONUS
 // Lukt het je om ervoor te zorgen dat alle e-mailadressen in lowercase letters komen te staan? Dit heb je nog niet geleerd, maar google is your best friend...
 // ==========================================
 
+console.log(`
+Opdracht 2-BONUS:
+`);
 
+for (let i = 0; i < NOVIEmployees.length; i++) {
+    NOVIEmployees[i].email = NOVIEmployees[i].email.toLowerCase();
+}
+
+console.log(NOVIEmployees);
 
 
 // ==========================================
@@ -118,18 +176,47 @@ const students = [
 // [
 //     { name: 'Mariska', city: 'Utrecht', zipCode: '3513', neighborhood: 'Pijlsweerd' },
 //     { name: 'Mehmet', city: 'Utrecht', zipCode: '3514', neighborhood: 'Vogelenbuurt' },
-//     { name: 'Dennis', city: 'Utrecht', zipCode: '3572', neighborhood: 'Wittevrouwen' },
-//     { name: 'Robin', city: 'Utrecht', zipCode: '3581', neighborhood: 'Oudwijk' },
-//     { name: 'Tanush', city: 'Utrecht', zipCode: '3512', neighborhood: 'Binnenstad' },
+//     { name: 'Dennis', city: 'Utrecht', zipCode: '3572', neighborhood: 'Vogelenbuurt' },
+//     { name: 'Robin', city: 'Utrecht', zipCode: '3581', neighborhood: 'Vogelenbuurt' },
+//     { name: 'Tanush', city: 'Utrecht', zipCode: '3512', neighborhood: 'Vogelenbuurt' },
 //     { name: 'Florien', city: 'Utrecht', zipCode: '3513', neighborhood: 'Pijlsweerd' },
-//     { name: 'Larissa', city: 'Utrecht', zipCode: '3583', neighborhood: 'Schildersbuurt' },
-//     { name: 'Marijn', city: 'Utrecht', zipCode: '3572', neighborhood: 'Wittevrouwen' },
-//     { name: 'Jan', city: 'Utrecht', zipCode: '3531', neighborhood: 'Lombok' },
-//     { name: 'Laura', city: 'Utrecht', zipCode: '3531', neighborhood: 'Lombok' },
+//     { name: 'Larissa', city: 'Utrecht', zipCode: '3583', neighborhood: 'Vogelenbuurt' },
+//     { name: 'Marijn', city: 'Utrecht', zipCode: '3572', neighborhood: 'Vogelenbuurt' },
+//     { name: 'Jan', city: 'Utrecht', zipCode: '3531', neighborhood: 'Vogelenbuurt' },
+//     { name: 'Laura', city: 'Utrecht', zipCode: '3531', neighborhood: 'Vogelenbuurt' },
 //     { name: 'Aicha', city: 'Utrecht', zipCode: '3514', neighborhood: 'Vogelenbuurt' },
-//     { name: 'Karima', city: 'Utrecht', zipCode: '3531', neighborhood: 'Lombok' }
+//     { name: 'Karima', city: 'Utrecht', zipCode: '3531', neighborhood: 'Vogelenbuurt' }
 // ]
 // ==========================================
 
+console.log(`
+Opdracht 3:
+`);
 
+for (let i = 0; i < students.length; i++) {
+    switch (students[i].zipCode) {
+        case `3512`:
+            students[i].neighborhood = `Binnenstad`;
+            break;
+        case `3513`:
+            students[i].neighborhood = `Pijlsweerd`;
+            break;
+        case `3514`:
+            students[i].neighborhood = `Vogelenbuurt`;
+            break;
+        case `3531`:
+            students[i].neighborhood = `Lombok`;
+            break;
+        case `3572`:
+            students[i].neighborhood = `Wittevrouwen`;
+            break;
+        case `3581`:
+            students[i].neighborhood = `Oudwijk`;
+            break;
+        case `3583`:
+            students[i].neighborhood = `Schildersbuurt`;
+            break;
+    }
+}
 
+console.log(students);
